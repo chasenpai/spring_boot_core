@@ -11,7 +11,7 @@ import org.springframework.transaction.TransactionManager;
 import javax.sql.DataSource;
 
 @Slf4j
-@Configuration
+//@Configuration - 스프링 부트는 Auto Configuration 기능으로 일반적으로 자주 사용하는 수 많은 빈들을 자동으로 등록해줌
 public class DBConfig {
 
     @Bean
