@@ -24,7 +24,12 @@ public class EnvironmentCheck {
         log.info("env user = {}", user);
         log.info("env password = {}", password);
 
-        //우선순위 커맨드 라인 옵션 인수 > 자바 시스템 속성
+        //우선순위
+        //1. @TestPropertySource
+        //2. 커맨드 라인 옵션 인수
+        //3. 자바 시스템 속성
+        //4. OS 환경변수
+        //5. properties
         //더 유연하고 범위가 좁은 것이 우선권을 가진다
     }
 
