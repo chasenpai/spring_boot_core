@@ -1,8 +1,20 @@
 management:
 
+  info: #순서 주의(endpoint 하위 아님)
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+
   endpoint:
     shutdown:
       enabled: true #서버를 내려버리는 엔드포인트(기본 비활성화)
+    health:
+#      show-details: always #헬스 정보 자세히 노출
+      show-components: always #헬스 정보 적당히 노출
+
 
   endpoints:
     #액추에이터의 기능을 웹에 노출
@@ -10,6 +22,12 @@ management:
       exposure:
         include: "*"
         exclude: "env, beans"
+
+info:
+  app:
+    name: hello-actuator
+    company: wvwv
+
         #beans - 스프링 컨테이너에 등록된 스프링 빈을 보여준다
         #conditions - condition 을 통해서 빈을 등록할 때 평가 조건과 일치하거나 일치하지 않는 이유를 표시한다
         #configprops - @ConfigurationProperties 를 보여준다
