@@ -8,6 +8,9 @@ management:
     env:
       enabled: true
 
+#  server:
+#    port: 9292 #액추에이터 포트 변경 가능
+
   endpoint:
     shutdown:
       enabled: true #서버를 내려버리는 엔드포인트(기본 비활성화)
@@ -23,10 +26,17 @@ management:
         include: "*"
         exclude: "env, beans"
 
+#      base-path: "/manage"  #액추에이터 기본경로 변경 가능
+
 info:
   app:
     name: hello-actuator
     company: wvwv
+
+logging:
+  level:
+    hello.controller: debug
+
 
         #beans - 스프링 컨테이너에 등록된 스프링 빈을 보여준다
         #conditions - condition 을 통해서 빈을 등록할 때 평가 조건과 일치하거나 일치하지 않는 이유를 표시한다
